@@ -1,0 +1,241 @@
+.profile-container {
+  min-height: calc(100vh - 80px);
+  background-color: var(--light-bg);
+  padding: 2rem 1rem;
+}
+
+.profile-header {
+  background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.14), transparent 48%),
+    linear-gradient(120deg, #0f4671 0%, #1b6aa8 100%);
+  color: white;
+  padding: 2rem;
+  border-radius: 16px;
+  margin-bottom: 1.5rem;
+}
+
+.profile-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+
+.profile-header p {
+  font-size: 1.1rem;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.profile-content {
+  display: grid;
+  gap: 2rem;
+}
+
+.profile-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.profile-stat-card {
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.profile-stat-label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.profile-stat-value {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.profile-stat-text {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.section-heading-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.profile-section {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  padding: 2rem;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 18px 40px rgba(16, 32, 51, 0.08);
+}
+
+.profile-section h2 {
+  font-size: 1.25rem;
+  margin-bottom: 0;
+  color: var(--text-primary);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.65rem;
+}
+
+.user-info {
+  display: grid;
+  gap: 1rem;
+}
+
+.info-card {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.clinical-form {
+  display: grid;
+  gap: 1rem;
+}
+
+.clinical-form .form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.clinical-form .form-group label {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.info-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.info-group label {
+  font-weight: 600;
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+
+.info-group p {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.timeline-filter {
+  min-width: 150px;
+  max-width: 200px;
+  padding: 0.4rem 0.6rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-bg);
+  color: var(--text-primary);
+}
+
+.appointments-section {
+  grid-column: 1 / -1;
+}
+
+.appointments-list {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.timeline-group {
+  border: 1px solid var(--border-color);
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.4);
+}
+
+.timeline-summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: rgba(19, 34, 53, 0.04);
+  color: var(--heading-color);
+  font-weight: 800;
+}
+
+.timeline-summary::-webkit-details-marker {
+  display: none;
+}
+
+.timeline-count {
+  min-width: 28px;
+  height: 22px;
+  padding: 0 8px;
+  border-radius: 999px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  background: rgba(22, 93, 151, 0.12);
+  border: 1px solid rgba(22, 93, 151, 0.22);
+  color: rgba(22, 93, 151, 0.95);
+}
+
+.timeline-items {
+  padding: 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.no-appointments {
+  text-align: center;
+  color: var(--text-secondary);
+  padding: 2rem;
+  font-size: 1.1rem;
+}
+
+.no-appointments a {
+  color: var(--primary-color);
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-header {
+    padding: 1.5rem;
+  }
+
+  .profile-header h1 {
+    font-size: 1.5rem;
+  }
+
+  .profile-section {
+    padding: 1.5rem;
+  }
+
+  .info-card {
+    grid-template-columns: 1fr;
+  }
+
+  .section-heading-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

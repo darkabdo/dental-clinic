@@ -1,0 +1,23 @@
+/**
+ * Clinic design tokens — teal / ice / slate, surfaces, focus, urgency accents.
+ * Imported before index.css so legacy --primary-* aliases can reference these.
+ */
+:root {
+  --clinic-teal: #0d9488;
+  --clinic-teal-muted: rgba(13, 148, 136, 0.14);
+  --clinic-ice: #e8f4f3;
+  --clinic-ice-deep: #cfe8e5;
+  --clinic-slate: #334155;
+  --clinic-slate-soft: #64748b;
+
+  --page-bg: #eef3f9;
+  --page-bg-gradient: linear-gradient(165deg, var(--clinic-ice) 0%, var(--page-bg) 38%, #e8eef6 100%);
+
+  --focus-ring-color: rgba(13, 148, 136, 0.35);
+  --focus-ring: 0 0 0 3px var(--focus-ring-color);
+
+  /* Low urgency — aligned with dentist workspace cyan (tone-routine) */
+  --urgency-low-bg: rgba(6, 182, 212, 0.14);
+  --urgency-low-color: #0e7490;
+  --urgency-low-border: #06b6d4;
+}

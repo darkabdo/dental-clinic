@@ -1,0 +1,1105 @@
+/* Reception console — matches BookAppointment / site tokens (index.css) */
+
+.reception-dashboard {
+  min-height: calc(100vh - 80px);
+  background-color: var(--light-bg);
+  padding: 2rem 1rem 3rem;
+}
+
+.reception-dashboard__wrap {
+  max-width: 1000px;
+}
+
+/* ——— Page header (same language as .book-header) ——— */
+.reception-page-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  background: radial-gradient(circle at 20% 10%, rgba(255, 255, 255, 0.14), transparent 48%),
+    linear-gradient(120deg, #0f4671 0%, #1b6aa8 100%);
+  color: #fff;
+  padding: 2rem 2rem 2.25rem;
+  border-radius: 22px;
+  margin-bottom: 2rem;
+  box-shadow: 0 18px 40px rgba(16, 32, 51, 0.12);
+}
+
+.reception-page-header__main {
+  flex: 1;
+  min-width: min(100%, 280px);
+}
+
+.reception-eyebrow {
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.88;
+  margin: 0 0 0.65rem;
+}
+
+.reception-page-header h1 {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+  text-shadow: 0 12px 26px rgba(0, 0, 0, 0.22);
+}
+
+.reception-page-header__lead {
+  font-size: 1.05rem;
+  opacity: 0.95;
+  color: rgba(255, 255, 255, 0.92);
+  margin: 0 0 0.65rem;
+  line-height: 1.5;
+}
+
+.reception-page-header__greeting {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.88);
+  max-width: 36rem;
+}
+
+.reception-page-header__greeting strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.reception-page-header__kpis {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.reception-kpi {
+  background: rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  border-radius: 14px;
+  padding: 1rem 1.35rem;
+  min-width: 7rem;
+  text-align: center;
+}
+
+.reception-kpi__value {
+  display: block;
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-size: 1.85rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.05;
+  text-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+}
+
+.reception-kpi__label {
+  display: block;
+  margin-top: 0.35rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.88);
+}
+
+/* ——— Tab shell (glass card like .booking-form) ——— */
+.reception-tab-shell {
+  background: rgba(255, 255, 255, 0.55);
+  backdrop-filter: blur(12px);
+  border-radius: 22px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 18px 40px rgba(16, 32, 51, 0.08);
+  overflow: hidden;
+}
+
+.reception-tab-row {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-bottom: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.45);
+}
+
+.reception-tab {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  gap: 0.25rem;
+  padding: 1.15rem 1.25rem 1.35rem;
+  margin: 0;
+  border: none;
+  border-right: 1px solid var(--border-color);
+  background: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--text-secondary);
+  transition: background 0.2s ease, color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reception-tab:last-child {
+  border-right: none;
+}
+
+.reception-tab:hover {
+  background: rgba(15, 76, 129, 0.04);
+  color: var(--text-primary);
+}
+
+.reception-tab--active {
+  background: rgba(255, 255, 255, 0.85);
+  color: var(--text-primary);
+  box-shadow: inset 0 -3px 0 var(--primary-color);
+}
+
+.reception-tab__title {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: inherit;
+  letter-spacing: -0.01em;
+}
+
+.reception-tab__hint {
+  font-size: 0.8rem;
+  line-height: 1.35;
+  color: var(--text-secondary);
+}
+
+.reception-tab--active .reception-tab__hint {
+  color: var(--text-secondary);
+}
+
+.reception-tab__badge {
+  position: absolute;
+  top: 0.85rem;
+  right: 1rem;
+  min-width: 1.5rem;
+  height: 1.5rem;
+  padding: 0 0.35rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-color), #1b6aa8);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(15, 76, 129, 0.35);
+}
+
+.reception-tab--active .reception-tab__badge {
+  background: linear-gradient(135deg, var(--secondary-color), #1cb89a);
+  box-shadow: 0 2px 10px rgba(22, 160, 133, 0.35);
+}
+
+/* ——— Panel ——— */
+.reception-panel-stage {
+  min-height: 380px;
+  max-height: min(70vh, 720px);
+  overflow-y: auto;
+  scrollbar-gutter: stable;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.reception-panel-inner {
+  padding: 2rem 2rem 2.25rem;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.reception-panel-inner--concierge {
+  max-width: 880px;
+}
+
+.reception-panel-inner--pipeline {
+  max-width: min(960px, 100%);
+}
+
+.reception-panel-inner--lobby {
+  max-width: 100%;
+}
+
+/* ——— Calendar agenda (vertical day stacks, not one flat list) ——— */
+.reception-agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.reception-agenda--pipeline {
+  gap: 2rem;
+  padding-bottom: 0.5rem;
+}
+
+.reception-agenda-day {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  border-radius: 16px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.65);
+  overflow: hidden;
+  box-shadow: 0 10px 28px rgba(16, 32, 51, 0.05);
+}
+
+.reception-agenda-day__header {
+  display: flex;
+  align-items: stretch;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(15, 76, 129, 0.06) 0%, rgba(255, 255, 255, 0.9) 100%);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reception-agenda-day__header--today {
+  background: linear-gradient(135deg, rgba(22, 160, 133, 0.09) 0%, rgba(255, 255, 255, 0.95) 100%);
+}
+
+.reception-agenda-day__header--compact {
+  padding: 0.65rem 1rem;
+}
+
+.reception-agenda-day__header--compact .reception-agenda-day__tile {
+  width: 3.25rem;
+  padding: 0.3rem 0.25rem;
+}
+
+.reception-agenda-day__header--compact .reception-agenda-day__dom {
+  font-size: 1.2rem;
+}
+
+.reception-agenda-day__header--compact .reception-agenda-day__weekday {
+  font-size: 0.92rem;
+}
+
+.reception-agenda-day__header--compact .reception-agenda-day__fulldate {
+  font-size: 0.78rem;
+}
+
+.reception-agenda-day--with-table {
+  overflow: hidden;
+}
+
+.reception-agenda-day--with-table .reception-table-wrap {
+  border-top: 1px solid var(--border-color);
+}
+
+/* ——— Lobby data table ——— */
+.reception-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.reception-data-table {
+  width: 100%;
+  min-width: 880px;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+  background: var(--surface-bg);
+}
+
+.reception-data-table thead {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, #f8fafc 0%, #eef3f9 100%);
+  box-shadow: 0 1px 0 var(--border-color);
+}
+
+.reception-data-table th {
+  text-align: left;
+  padding: 0.85rem 1rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  border-bottom: 2px solid var(--border-color);
+  white-space: nowrap;
+}
+
+.reception-data-table td {
+  padding: 0.95rem 1rem;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border-color);
+  color: var(--text-primary);
+  line-height: 1.45;
+}
+
+.reception-data-table tbody tr:nth-child(even) {
+  background: rgba(15, 76, 129, 0.025);
+}
+
+.reception-data-table tbody tr:hover {
+  background: rgba(22, 160, 133, 0.06);
+}
+
+/* ——— Today's lobby: urgency row accents + richer header ——— */
+.reception-table-wrap--lobby {
+  border-radius: 0 0 14px 14px;
+}
+
+.reception-data-table--lobby thead {
+  background: linear-gradient(180deg, rgba(13, 148, 136, 0.12) 0%, rgba(232, 244, 243, 0.95) 100%);
+}
+
+.reception-data-table--lobby thead th {
+  color: #0f4c81;
+  border-bottom-color: rgba(13, 148, 136, 0.28);
+}
+
+.reception-data-table tbody tr.reception-data-table__row--urgency-low {
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.11), rgba(255, 255, 255, 0.98) 36%) !important;
+  box-shadow: inset 4px 0 0 0 #06b6d4;
+}
+
+.reception-data-table tbody tr.reception-data-table__row--urgency-medium {
+  background: linear-gradient(90deg, rgba(250, 204, 21, 0.14), rgba(255, 255, 255, 0.98) 38%) !important;
+  box-shadow: inset 4px 0 0 0 #eab308;
+}
+
+.reception-data-table tbody tr.reception-data-table__row--urgency-high {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.12), rgba(255, 255, 255, 0.98) 38%) !important;
+  box-shadow: inset 4px 0 0 0 #ef4444;
+}
+
+.reception-data-table tbody tr.reception-data-table__row--urgency-low:hover,
+.reception-data-table tbody tr.reception-data-table__row--urgency-medium:hover,
+.reception-data-table tbody tr.reception-data-table__row--urgency-high:hover {
+  filter: brightness(0.985);
+}
+
+.reception-data-table tbody tr.reception-data-table__row--locked.reception-data-table__row--urgency-low,
+.reception-data-table tbody tr.reception-data-table__row--locked.reception-data-table__row--urgency-medium,
+.reception-data-table tbody tr.reception-data-table__row--locked.reception-data-table__row--urgency-high {
+  opacity: 0.72;
+}
+
+/* Denser rows for booking pipeline (more patients per viewport) */
+.reception-table-wrap--dense .reception-data-table th {
+  padding: 0.55rem 0.65rem;
+}
+
+.reception-table-wrap--dense .reception-data-table td {
+  padding: 0.5rem 0.65rem;
+  vertical-align: middle;
+}
+
+.reception-table-wrap--dense .reception-data-table__time {
+  font-size: 0.95rem;
+}
+
+.reception-table-wrap--dense .reception-table-sub {
+  margin-top: 0.12rem;
+  font-size: 0.72rem;
+}
+
+.reception-table-desk-cell--compact-only {
+  flex-direction: row;
+  align-items: center;
+  gap: 0;
+}
+
+.reception-table-desk-cell--compact-only .reception-desk-select--compact {
+  max-width: 200px;
+}
+
+.reception-data-table__row--locked {
+  opacity: 0.72;
+}
+
+.reception-data-table__time {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--heading-color);
+  white-space: nowrap;
+}
+
+.reception-data-table__strong {
+  font-weight: 600;
+  color: var(--heading-color);
+}
+
+.reception-data-table__contact {
+  font-size: 0.84rem;
+}
+
+.reception-contact-line {
+  display: block;
+}
+
+.reception-contact-line--muted {
+  color: var(--text-secondary);
+  font-size: 0.8rem;
+  word-break: break-word;
+}
+
+.reception-muted-inline {
+  color: var(--text-secondary);
+}
+
+.reception-data-table__visit {
+  max-width: 220px;
+}
+
+.reception-table-primary {
+  display: block;
+  font-weight: 500;
+}
+
+.reception-table-sub {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.reception-data-table__desk {
+  min-width: 200px;
+}
+
+.reception-data-table__actions {
+  min-width: 210px;
+}
+
+.reception-row-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.reception-table-desk-cell {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.45rem;
+}
+
+.reception-table-desk-cell .reception-desk-select {
+  max-width: 220px;
+  width: 100%;
+}
+
+.reception-urgency {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.25rem 0.5rem;
+  border-radius: 999px;
+}
+
+.reception-urgency--low {
+  background: var(--urgency-low-bg);
+  color: var(--urgency-low-color);
+  border: 1px solid rgba(6, 182, 212, 0.35);
+}
+
+.reception-urgency--medium {
+  background: rgba(250, 204, 21, 0.2);
+  color: #a16207;
+  border: 1px solid rgba(234, 179, 8, 0.45);
+}
+
+.reception-urgency--high {
+  background: rgba(239, 68, 68, 0.14);
+  color: #b91c1c;
+  border: 1px solid rgba(239, 68, 68, 0.35);
+}
+
+.reception-desk-select--compact {
+  font-size: 0.78rem;
+  padding: 0.38rem 0.5rem;
+  border-radius: 8px;
+  max-width: 100%;
+}
+
+/* ——— Pipeline: compact vertical list ——— */
+.reception-pipeline-agenda {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.reception-pipeline-calendar-block {
+  margin-bottom: 0.95rem;
+}
+
+.reception-pipeline-day {
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  box-shadow: 0 8px 22px rgba(16, 32, 51, 0.05);
+}
+
+.reception-pipeline-day--table .reception-table-wrap {
+  border-top: 1px solid var(--border-color);
+}
+
+/* ——— Booking pipeline: card rows (grid), urgency stripes, smooth hover ——— */
+.reception-pipeline-day--cards {
+  overflow: visible;
+}
+
+.reception-pipeline-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  padding: 0.85rem 1rem 1.1rem;
+  background: linear-gradient(165deg, rgba(232, 244, 243, 0.35) 0%, rgba(248, 250, 252, 0.85) 55%, #fff 100%);
+  border-top: 1px solid var(--border-color);
+}
+
+.reception-pipeline-card {
+  display: grid;
+  grid-template-columns: 4.25rem minmax(0, 1fr) auto minmax(11rem, 14rem);
+  gap: 0.65rem 1rem;
+  align-items: center;
+  padding: 0.9rem 1.05rem;
+  border-radius: 16px;
+  border: 1px solid rgba(215, 224, 234, 0.95);
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 4px 16px rgba(16, 32, 51, 0.06);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.reception-pipeline-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 28px rgba(16, 32, 51, 0.1);
+  border-color: rgba(13, 148, 136, 0.22);
+}
+
+.reception-pipeline-card--locked {
+  opacity: 0.78;
+}
+
+.reception-pipeline-card--urgency-low {
+  box-shadow: inset 5px 0 0 0 #06b6d4, 0 4px 16px rgba(6, 182, 212, 0.08);
+  background: linear-gradient(90deg, rgba(6, 182, 212, 0.09), rgba(255, 255, 255, 0.96) 28%);
+}
+
+.reception-pipeline-card--urgency-medium {
+  box-shadow: inset 5px 0 0 0 #eab308, 0 4px 16px rgba(234, 179, 8, 0.08);
+  background: linear-gradient(90deg, rgba(250, 204, 21, 0.12), rgba(255, 255, 255, 0.96) 30%);
+}
+
+.reception-pipeline-card--urgency-high {
+  box-shadow: inset 5px 0 0 0 #ef4444, 0 4px 16px rgba(239, 68, 68, 0.08);
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.1), rgba(255, 255, 255, 0.96) 30%);
+}
+
+.reception-pipeline-card__time {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-weight: 800;
+  font-size: 1rem;
+  color: var(--heading-color);
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+}
+
+.reception-pipeline-card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.reception-pipeline-card__name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--heading-color);
+}
+
+.reception-pipeline-card__doc {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.reception-pipeline-card__reason {
+  font-size: 0.8rem;
+  color: var(--text-primary);
+  font-weight: 500;
+  margin-top: 0.15rem;
+}
+
+.reception-pipeline-card__symptoms {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.reception-pipeline-card__urgency {
+  justify-self: end;
+}
+
+.reception-pipeline-card__desk {
+  min-width: 0;
+}
+
+.reception-pipeline-card__actions {
+  display: flex;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.reception-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(17, 24, 39, 0.42);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1200;
+  padding: 1rem;
+}
+
+.reception-modal {
+  width: min(640px, 96vw);
+  background: #fff;
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  box-shadow: 0 20px 48px rgba(16, 32, 51, 0.2);
+  padding: 1rem 1rem 0.85rem;
+}
+
+.reception-modal h3 {
+  margin: 0 0 0.85rem;
+}
+
+.reception-edit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.reception-edit-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.55rem;
+  margin-top: 0.35rem;
+}
+
+.reception-pipeline-card__desk .reception-desk-select--compact {
+  width: 100%;
+  max-width: none;
+}
+
+@media (max-width: 768px) {
+  .reception-pipeline-card {
+    grid-template-columns: 1fr;
+    gap: 0.55rem;
+  }
+
+  .reception-pipeline-card__time {
+    font-size: 0.92rem;
+  }
+
+  .reception-pipeline-card__urgency {
+    justify-self: start;
+  }
+
+  .reception-pipeline-card__actions {
+    justify-content: flex-start;
+  }
+}
+
+.reception-pipeline-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0.85rem 0.85rem;
+}
+
+.reception-pipeline-item {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0.5rem;
+  padding: 0.65rem 0.5rem;
+  border-bottom: 1px solid rgba(215, 224, 234, 0.85);
+}
+
+.reception-pipeline-item:last-child {
+  border-bottom: none;
+}
+
+.reception-pipeline-item__time {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 800;
+  color: var(--primary-color);
+  letter-spacing: 0.02em;
+}
+
+.reception-pipeline-item__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  padding-left: 0.35rem;
+  border-left: 3px solid rgba(15, 76, 129, 0.2);
+}
+
+.reception-pipeline-item__name {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--heading-color);
+}
+
+.reception-pipeline-item__doc {
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.reception-pipeline-item__reason {
+  font-size: 0.76rem;
+  color: var(--text-secondary);
+  line-height: 1.4;
+}
+
+.reception-pipeline-item__desk {
+  padding-left: 0.35rem;
+}
+
+.reception-pipeline-item__desk .reception-desk-select--compact {
+  width: 100%;
+}
+
+.reception-agenda-day__tile {
+  flex-shrink: 0;
+  width: 4.25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0.45rem 0.35rem;
+  border-radius: 12px;
+  background: var(--surface-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 6px 16px rgba(16, 32, 51, 0.07);
+}
+
+.reception-agenda-day__header--today .reception-agenda-day__tile {
+  border-color: rgba(22, 160, 133, 0.35);
+  box-shadow: 0 6px 18px rgba(22, 160, 133, 0.12);
+}
+
+.reception-agenda-day__dow {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--primary-color);
+}
+
+.reception-agenda-day__dom {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-size: 1.65rem;
+  font-weight: 800;
+  line-height: 1.05;
+  color: var(--heading-color);
+}
+
+.reception-agenda-day__mon {
+  font-size: 0.65rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.reception-agenda-day__meta {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.reception-agenda-day__titles {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.reception-agenda-day__weekday {
+  font-family: 'Manrope', 'Inter', sans-serif;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--heading-color);
+}
+
+.reception-agenda-day__fulldate {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+.reception-agenda-day__tag {
+  flex-shrink: 0;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.35rem 0.65rem;
+  border-radius: 999px;
+  background: rgba(22, 160, 133, 0.18);
+  color: #0d8068;
+}
+
+.reception-agenda-day__slots {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  padding: 1rem 1.15rem 1.2rem;
+  border-left: 3px solid rgba(15, 76, 129, 0.15);
+  margin-left: 0.35rem;
+}
+
+.reception-agenda-day__header--today + .reception-agenda-day__slots {
+  border-left-color: rgba(22, 160, 133, 0.35);
+}
+
+.reception-panel-intro {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.15rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.reception-panel-h2 {
+  font-size: 1.35rem;
+  margin: 0 0 0.4rem;
+  color: var(--heading-color);
+}
+
+.reception-panel-lead {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.55;
+  color: var(--text-secondary);
+}
+
+.reception-filter-row {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.8rem 0 0.9rem;
+}
+
+.reception-filter-row .form-group {
+  min-width: 170px;
+  margin: 0;
+}
+
+.reception-filter-row--in-card {
+  padding: 0.8rem 1rem 0;
+  margin: 0;
+}
+
+.reception-muted {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+}
+
+.reception-prose {
+  line-height: 1.65;
+  max-width: 38rem;
+}
+
+.reception-pill {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  text-transform: capitalize;
+  padding: 0.25rem 0.5rem;
+  border-radius: 8px;
+}
+
+.reception-pill--neutral {
+  background: #eef2f7;
+  color: var(--text-secondary);
+}
+
+.reception-pill--info {
+  background: rgba(15, 76, 129, 0.1);
+  color: var(--primary-color);
+}
+
+.reception-pill--success {
+  background: rgba(22, 160, 133, 0.12);
+  color: #0d8068;
+}
+
+.reception-pill--warn {
+  background: rgba(192, 57, 43, 0.1);
+  color: var(--danger-color);
+}
+
+.reception-desk-select {
+  width: 100%;
+  max-width: 280px;
+  padding: 0.5rem 0.65rem;
+  font-size: 0.88rem;
+  border-radius: 10px;
+  border: 1px solid var(--border-color);
+  background: var(--surface-bg);
+  color: var(--text-primary);
+}
+
+.reception-desk-select:focus {
+  outline: none;
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(22, 93, 151, 0.14);
+}
+
+/* Concierge */
+.reception-concierge-block {
+  margin-bottom: 1.15rem;
+}
+
+.reception-label {
+  display: block;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.45rem;
+}
+
+.reception-search-row {
+  display: flex;
+  gap: 0.65rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.reception-input {
+  flex: 1;
+  min-width: 200px;
+  padding: 0.65rem 0.85rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  font-size: 0.95rem;
+  background: var(--surface-bg);
+}
+
+.reception-search-results {
+  list-style: none;
+  margin: 0.65rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.reception-patient-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  text-align: left;
+  padding: 0.65rem 0.85rem;
+  border-radius: 14px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+  font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.reception-patient-btn:hover {
+  border-color: rgba(15, 76, 129, 0.35);
+}
+
+.reception-patient-btn--active {
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px rgba(22, 93, 151, 0.12);
+}
+
+.reception-patient-btn span {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+.reception-calendar-wrap {
+  margin: 1rem 0;
+}
+
+.reception-month-nav {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.65rem;
+}
+
+.reception-book-form .form-group {
+  margin-bottom: 1rem;
+}
+
+.reception-book-form label {
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.reception-book-form select,
+.reception-book-form input[type='text'] {
+  border-radius: 14px;
+  padding: 0.65rem 0.85rem;
+}
+
+.reception-form-row-tight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+.reception-book-submit {
+  width: 100%;
+  margin-top: 0.5rem;
+  padding: 1rem;
+  font-weight: 600;
+}
+
+@media (max-width: 900px) {
+  .reception-tab-row {
+    grid-template-columns: 1fr;
+  }
+
+  .reception-tab {
+    border-right: none;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .reception-tab:last-child {
+    border-bottom: none;
+  }
+
+  .reception-tab--active {
+    box-shadow: inset 4px 0 0 var(--primary-color);
+  }
+}
+
+@media (max-width: 768px) {
+  .reception-page-header {
+    padding: 1.5rem 1.35rem;
+  }
+
+  .reception-page-header h1 {
+    font-size: 1.65rem;
+  }
+
+  .reception-panel-inner {
+    padding: 1.5rem 1.25rem;
+  }
+
+  .reception-form-row-tight {
+    grid-template-columns: 1fr;
+  }
+}

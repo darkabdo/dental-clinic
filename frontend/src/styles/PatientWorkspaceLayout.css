@@ -1,0 +1,37 @@
+.patient-workspace {
+  padding: 1.5rem 0 2.5rem;
+}
+
+.patient-workspace__inner {
+  max-width: 1200px;
+}
+
+.patient-workspace__nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.25rem;
+}
+
+.patient-workspace__tab {
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+.patient-workspace__tab:hover {
+  color: var(--primary-color);
+  border-color: rgba(15, 76, 129, 0.35);
+}
+
+.patient-workspace__tab--active {
+  color: #fff;
+  background: linear-gradient(135deg, var(--primary-color), #1b6aa8);
+  border-color: transparent;
+}
